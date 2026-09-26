@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Marks Entry</string>
+    <string name="settings_title">Web App URL Settings</string>
+    <string name="settings_label">Web App URL</string>
+    <string name="settings_hint">https://script.google.com/macros/s/.../exec</string>
+    <string name="btn_save">Save</string>
+    <string name="btn_cancel">Cancel</string>
+    <string name="btn_reset">Reset to Default</string>
+    <string name="btn_retry">Retry</string>
+    <string name="menu_settings">Settings</string>
+    <string name="menu_reload">Reload</string>
+    <string name="error_title">Unable to connect</string>
+    <string name="error_message">Could not reach the web app. Check your internet connection and try again.</string>
+    <string name="error_invalid_url">Please enter a valid HTTPS URL.</string>
+    <string name="toast_url_saved">URL saved. Reloading…</string>
+    <string name="toast_reset_done">Restored default URL. Reloading…</string>
+    <string name="toast_no_change">URL is unchanged.</string>
+</resources>
