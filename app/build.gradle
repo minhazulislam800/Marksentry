@@ -1,0 +1,63 @@
+plugins {
+    id 'com.android.application'
+}
+
+android {
+    namespace 'com.example.webviewwrapper'
+    compileSdk 34
+
+    defaultConfig {
+        applicationId "com.example.webviewwrapper"
+        minSdk 21
+        targetSdk 34
+        versionCode 1
+        versionName "1.0"
+    }
+
+    buildTypes {
+        release {
+            // Signed with the auto-generated debug keystore so the workflow
+            // output is directly installable. This is a self-signed key,
+            // fine for side-loading; swap in your own release key if you
+            // ever plan to distribute through the Play Store.
+            signingConfig signingConfigs.debug
+            minifyEnabled true
+            shrinkResources true
+            debuggable false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+        debug {
+            minifyEnabled false
+            applicationIdSuffix ".debug"
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+
+    buildFeatures {
+        buildConfig false
+    }
+
+    // Only ship the most common ABI-independent resources; this app has no native code,
+    // so there is nothing to split by ABI. Keep only one density set of launcher icon
+    // (a vector drawable) to avoid multiple raster copies.
+    bundle {
+        language { enableSplit = true }
+        density { enableSplit = true }
+        abi { enableSplit = true }
+    }
+
+    lint {
+        checkReleaseBuilds false
+        abortOnError false
+    }
+}
+
+dependencies {
+    // Intentionally no dependencies: pure Android SDK (android.webkit.WebView,
+    // android.app.Activity, SharedPreferences). No AndroidX, no Kotlin stdlib,
+    // no third-party libraries, no Firebase, no analytics.
+}
