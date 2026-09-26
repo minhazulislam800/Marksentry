@@ -83,6 +83,7 @@ public class MainActivity extends Activity {
     private void setupWebView() {
         WebSettings settings = webView.getSettings();
         settings.setJavaScriptEnabled(true);
+        settings.setUseWideViewPort(true);
         settings.setDomStorageEnabled(true); // Apps Script pages may use localStorage
         settings.setDatabaseEnabled(false);  // no need for WebSQL/local DB
         settings.setSupportMultipleWindows(false);
