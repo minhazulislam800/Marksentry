@@ -122,7 +122,6 @@ public class MainActivity extends Activity {
 
             @Override
             public void onPageFinished(WebView view, String url) {
-                view.evaluateJavascript("(function(){return JSON.stringify({innerWidth:window.innerWidth,clientWidth:document.documentElement.clientWidth,screenWidth:screen.width,devicePixelRatio:window.devicePixelRatio,outerWidth:window.outerWidth});})()", value -> android.util.Log.d("WEBVIEW_DEBUG", "VIEWPORT=" + value));
                 showContent();
             }
 
@@ -195,7 +194,6 @@ public class MainActivity extends Activity {
             // First load in this Activity instance, URL unchanged from last run.
             webView.loadUrl(activeUrl);
         } else {
-                view.evaluateJavascript("(function(){return JSON.stringify({innerWidth:window.innerWidth,clientWidth:document.documentElement.clientWidth,screenWidth:screen.width,devicePixelRatio:window.devicePixelRatio,outerWidth:window.outerWidth});})()", value -> android.util.Log.d("WEBVIEW_DEBUG", "VIEWPORT=" + value));
             showContent();
         }
     }
